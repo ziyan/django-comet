@@ -4,19 +4,19 @@ Django Comet
 
 This project provides three different server-side push (a.k.a. comet) mechanisms:
 
-    * Ajax long polling, including cross-origin
-    * XML HTTP RPC long polling
-    * Websocket
+ * Ajax long polling, including cross-origin
+ * XML HTTP RPC long polling
+ * Websocket
 
 These mechanisms are provided through tornado
 
 Requirements
 ============
 
-    git+git://github.com/joshmarshall/tornadorpc.git
-    git+git://github.com/evilkost/brukva.git
-    redis
-    tornado
+ * git+git://github.com/joshmarshall/tornadorpc.git
+ * git+git://github.com/evilkost/brukva.git
+ * redis
+ * tornado
 
 USAGE
 =====
