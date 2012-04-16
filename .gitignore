@@ -1,0 +1,17 @@
+*.pyc
+*.bak
+*.orig
+*~
+*.swp
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+*.db
+
+# OS generated files #
+######################
+.DS_Store*
+Icon?
