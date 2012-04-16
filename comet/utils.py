@@ -1,7 +1,7 @@
 from . import get_backend
 
-def signal_object(obj, events):
-    return get_backend().signal(obj, events)
+def signal(object_key, events):
+    return get_backend().signal(object_key, events)
 
-def register_object(obj, token=None):
-    return get_backend().register(obj, token)
+def register(object_key, token=None):
+    return get_backend().register(object_key, token)

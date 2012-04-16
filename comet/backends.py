@@ -15,9 +15,8 @@ class TornadoCometBackend(object):
     def __init__(self):
         self.api = redis.StrictRedis()
 
-    def signal(self, obj, events):
+    def signal(self, object_key, events):
         cls = TornadoCometBackend
-        object_key = self._get_object_key(obj)
         cookie = 0
 
         if not isinstance(events, Iterable):
@@ -44,9 +43,8 @@ class TornadoCometBackend(object):
 
         return False
 
-    def register(self, obj, token=None):
+    def register(self, object_key, token=None):
         cls = TornadoCometBackend
-        object_key = self._get_object_key(obj)
 
         if token and self.api.get(cls.TOKEN_PREFIX + token) == object_key:
             self.api.expire(cls.TOKEN_PREFIX + token, cls.TOKEN_TTL)
@@ -59,6 +57,3 @@ class TornadoCometBackend(object):
                 return token
 
         raise Exception('Failed to generate a unique token.')
-
-    def _get_object_key(self, obj):
-        return obj.object_type() + '.' + obj.uuid

@@ -22,6 +22,7 @@ class Application(tornado.web.Application):
         return handlers
 
     def get_django_handlers(self):
+        # django_application = django.core.handlers.wsgi.WSGIHandler()
         django_application = get_internal_wsgi_application()
         django_wsgi = tornado.wsgi.WSGIContainer(django_application)
         handlers = [
